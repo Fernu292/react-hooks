@@ -1,0 +1,27 @@
+:root{
+    --principalColor: rgba(101, 219, 52, 50%);
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Spline Sans', sans-serif;
+}
+
+.Header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+}
+
+.btn-mode{
+    border: none;
+    font-weight: 400;
+    padding: 0.8rem 1rem;
+    background-color: var(--principalColor);
+    border-radius: 1rem;
+}

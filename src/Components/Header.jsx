@@ -3,19 +3,12 @@ import {ThemeContext} from '../Context/ThenContext';
 
 const Header = () => {
 
-    const {color} = useContext(ThemeContext);
+    const {color, ThemeTransform} = useContext(ThemeContext);
     const [darkMode, setDarkMode] = useState(false);
-    
-    const handleClick = ()=>{
+      const handleClick = ()=>{
         setDarkMode(!darkMode);
     }
-
-    if(darkMode){
-        document.querySelector('html').classList.add('darkMode');
-    }else{
-        document.querySelector('html').classList.remove('darkMode');
-    }
-
+    ThemeTransform(darkMode);
     return ( 
         <header className='Header'>
             <h1 style={{color}}>React Hooks</h1>

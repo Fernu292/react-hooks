@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Character = ({character}) => {
+const Character = ({character, handleClick}) => {
 
     const { name, image, origin, status } = character;
     return ( 
@@ -12,6 +12,11 @@ const Character = ({character}) => {
                 <p className={
                     (status=='Alive')? "live" : (status=='unknown')? "unknow": "dead"
                 }>{status}</p>
+                <button 
+                    type='button'
+                    onClick={()=>handleClick(character)}
+                    className='btn-select'
+                >Agregar a Favs</button>
             </div>
             
         </div>

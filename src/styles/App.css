@@ -12,6 +12,10 @@ body{
     font-family: 'Spline Sans', sans-serif;
 }
 
+button{
+    cursor: pointer;
+}
+
 .Header{
     display: flex;
     align-items: center;
@@ -25,6 +29,14 @@ body{
     padding: 0.8rem 1rem;
     border: solid 4px var(--principalColor);
     background-color: transparent;
+    border-radius: 15rem;
+}
+
+.btn-select{
+    border: none;
+    font-weight: 400;
+    padding: 0.8rem 1rem;
+    background-color: var(--principalColor);
     border-radius: 15rem;
 }
 

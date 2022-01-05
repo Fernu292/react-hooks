@@ -9,7 +9,9 @@ const Character = ({character}) => {
             <div>
                 <h2>{name}</h2>
                 <p>{origin.name}</p>
-                <p>{status}</p>
+                <p className={
+                    (status=='Alive')? "live" : (status=='unknown')? "unknow": "dead"
+                }>{status}</p>
             </div>
             
         </div>

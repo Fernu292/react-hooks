@@ -3,7 +3,6 @@ import Character from './Character';
 import '../styles/characters.scss';
 
 const Characters = ({characters}) => {
-    console.log(characters);
     return ( 
         <section className='personajes'>
             {

@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import './styles/App.css';
+import './styles/DarkMode.scss';
 
 //Components
 import Header from './Components/Header';
 import Characters from './Components/Characters';
+import ThemeContextProvider from './Context/ThenContext';
 
 const App = () => {
 
@@ -20,13 +22,14 @@ const App = () => {
         RequestAPI();
     },[]);
 
+    
 
     return ( 
-        <>
+        <ThemeContextProvider>
             <Header />
             <hr />
             <Characters characters={characters}/>
-        </>
+        </ThemeContextProvider>
     );
 }
  

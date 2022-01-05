@@ -1,5 +1,6 @@
 :root{
-    --principalColor: rgba(101, 219, 52, 50%);
+    --principalColor: rgba(101, 219, 52, 70%);
+    --blackLight: rgba(0,0,0, 20%);
 }
 
 html{
@@ -22,12 +23,13 @@ body{
     border: none;
     font-weight: 400;
     padding: 0.8rem 1rem;
-    border: solid 1px var(--principalColor);
+    border: solid 4px var(--principalColor);
     background-color: transparent;
-    border-radius: 1rem;
+    border-radius: 15rem;
 }
 
 #root{
     max-width: 85%;
     margin: 0 auto;
 }
+

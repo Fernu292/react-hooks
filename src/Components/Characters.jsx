@@ -1,13 +1,15 @@
 import React from 'react';
+import Character from './Character';
+import '../styles/characters.scss';
 
 const Characters = ({characters}) => {
     console.log(characters);
     return ( 
-        <section>
+        <section className='personajes'>
             {
                 characters ? 
                     characters.map( character =>(
-                        <h3 key={character.id}>{character.name}</h3>
+                        <Character key ={character.id}character={character}/>
                     ))
                 : <p>Loading ...</p>
             }

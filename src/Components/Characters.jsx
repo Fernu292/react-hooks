@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState, useMemo, useRef, useCallback} from 'react';
 import Character from './Character';
 import '../styles/characters.scss';
 
@@ -25,12 +25,41 @@ const Characters = ({characters}) => {
     //uso de reducer: funcion, state
     const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
 
+    const [search, setSearch] = useState('');
+    const searchInput = useRef(null);
+
     const handleClick = (favorite)=>{
         dispatch({type: "ADD_TO_FAVORITE", payload: favorite});
     }
 
+    const handleSearch = () =>{
+        setSearch(searchInput.current.value);
+    }
+
+    //Forma de filtro sin useMemo
+    // const filteredUsers = characters.filter(user =>{
+    //      return user.name.toLowerCase().includes(search.toLowerCase());
+    //  });
+
+
+    //Funcion usada con useMemo para evitar reRenders
+    const filteredUsers = useMemo( ()=> (
+        characters.filter(user =>{
+           return user.name.toLowerCase().includes(search.toLowerCase());
+        })
+    ), [characters, search]);
+
     return ( 
         <>
+            <div>
+                <input 
+                    type='text' 
+                    value={search} 
+                    onChange={handleSearch}
+                    ref={searchInput}
+                />
+            </div>
+
             <div className='favorites'>
                 <h3>Favorites characters: </h3>
                 {favorites.favorites.map(favorite =>(
@@ -41,8 +70,8 @@ const Characters = ({characters}) => {
             <section className='personajes'>
             
                 {
-                    characters ? 
-                        characters.map( character =>(
+                    filteredUsers ? 
+                        filteredUsers.map( character =>(
                             <Character 
                                 key ={character.id}
                                 character={character}

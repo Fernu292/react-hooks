@@ -16,6 +16,12 @@
     "Profesional",
     "Hooks"
   ],
+  "husky": {
+    "hooks" : {
+      "pre-commit": "npm test && npm run lint",
+      "...": "..."
+    }
+  },
   "author": "Luis Fernando <fernu292@gmail.com>",
   "license": "MIT",
   "dependencies": {

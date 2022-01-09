@@ -1,0 +1,33 @@
+{
+  "name": "platzi-store-conf",
+  "version": "1.0.0",
+  "description": "Proyecto usando React Hooks profesional",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve "
+  },
+  "keywords": [
+    "React",
+    "Hooks",
+    "Profesional",
+    "Hooks"
+  ],
+  "author": "Luis Fernando <fernu292@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  }
+}

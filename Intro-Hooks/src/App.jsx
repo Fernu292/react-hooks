@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './styles/App.css';
 import './styles/DarkMode.scss';
 
@@ -7,22 +7,13 @@ import Header from './Components/Header';
 import Characters from './Components/Characters';
 import ThemeContextProvider from './Context/ThenContext';
 
+//Hooks
+import useCharacters from './hooks/useCharacters';
+
 const App = () => {
 
     const API = `https://rickandmortyapi.com/api/character/?page=1`;
-    const [characters, setCharacters] = useState([]);
-
-    useEffect(()=>{
-        const RequestAPI = async ()=>{
-            const response = await fetch(API);
-            const result = await response.json();
-            setCharacters(result.results);
-        }
-
-        RequestAPI();
-    },[]);
-
-    
+    const characters = useCharacters(API);
 
     return ( 
         <ThemeContextProvider>

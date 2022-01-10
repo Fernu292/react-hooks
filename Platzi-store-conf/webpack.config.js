@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: "/"
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -28,8 +29,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader'],
+        test: /\.(css|scss)$/,
+        use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -48,6 +49,7 @@ module.exports = {
       publicPath: path.join(__dirname, 'dist'),
     },
     port: 3000,
+    historyApiFallback: true,
     compress: true,
     open: true,
   },

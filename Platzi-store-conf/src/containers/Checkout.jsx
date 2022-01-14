@@ -12,7 +12,9 @@ const Checkout = () => {
                         <h4>ITEM name</h4>
                         <span>$10</span>
                     </div>
-                    <button type='button'>Eliminar</button>
+                    <button type='button'>
+                        <i className='fas fa-trash' title='Eliminar'></i>
+                    </button>
                 </div>
             </div>
 

@@ -1,12 +1,13 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { AppContext } from '../context/AppContext';
 import { Link } from 'react-router-dom';
 import "../styles/components/Header.css";
 
 const Header = () => {
 
-    const { state } = useContext(AppContext);
-    const { cart } = state;
+    const { cart } = useContext(AppContext);
+
+    console.log(cart);
     
     return (
         <header className='Header'>

@@ -1,6 +1,9 @@
 import React from "react";
+import {v4 as uuidv4} from 'uuid';
 
 const Product = ({product, handleAddToCart}) => {
+
+
     return (
         <div className="Products-item">
             <img src={product.image} alt={product.title} />

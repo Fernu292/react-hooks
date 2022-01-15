@@ -6,10 +6,14 @@ import useInitialState from '../hooks/useInitialState';
 export const AppContext = createContext();
 
 const AppContextProvider = ({children})=>{
-    const {state, addToCart, removeFromCart} = useInitialState();
+    const {state, addToCart, removeFromCart, addToBuyer, addNewOrder} = useInitialState();
     const { cart } = state;
     
-    
+    const handleSumTotal = ()=>{
+        const reducer = (acumulator, currentValue) => acumulator+currentValue.price;
+        const sum = cart.reduce(reducer, 0);
+        return sum;
+    }
 
     return(
         <AppContext.Provider
@@ -17,8 +21,10 @@ const AppContextProvider = ({children})=>{
                 state,
                 cart,
                 addToCart, 
-                removeFromCart
-
+                addToBuyer,
+                removeFromCart,
+                addNewOrder,
+                handleSumTotal,
             }}
         >
             {children}

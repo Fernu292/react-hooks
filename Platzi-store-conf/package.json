@@ -25,6 +25,7 @@
   "author": "Luis Fernando <fernu292@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/eslint-parser": "^7.16.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -36,6 +37,7 @@
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-paypal-button-v2": "^2.6.3",
     "react-router-dom": "^6.2.1",
     "uuid": "^8.3.2"
   },
@@ -45,6 +47,7 @@
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "dotenv-webpack": "^7.0.3",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.6",
